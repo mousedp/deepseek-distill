@@ -1,6 +1,39 @@
 {
-  "total_chars": 2241744,
-  "total_parts": 8,
-  "parts": [],
-  "assembled_from": "Leaf x DeepSeek conversations.json"
+  "description": "Leaf x DeepSeek conversations knowledge distillation source",
+  "source_file": "conversations.json (from DeepSeek export)",
+  "split": "8 parts - reassemble in order for full content",
+  "parts": [
+    {
+      "n": 1,
+      "name": "conversations_part01.txt"
+    },
+    {
+      "n": 2,
+      "name": "conversations_part02.txt"
+    },
+    {
+      "n": 3,
+      "name": "conversations_part03.txt"
+    },
+    {
+      "n": 4,
+      "name": "conversations_part04.txt"
+    },
+    {
+      "n": 5,
+      "name": "conversations_part05.txt"
+    },
+    {
+      "n": 6,
+      "name": "conversations_part06.txt"
+    },
+    {
+      "n": 7,
+      "name": "conversations_part07.txt"
+    },
+    {
+      "n": 8,
+      "name": "conversations_part08.txt"
+    }
+  ]
 }
