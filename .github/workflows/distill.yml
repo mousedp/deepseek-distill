@@ -18,9 +18,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
-      - name: Assemble & Distill
+      - name: Assemble \& Distill
         run: node distiller.js
 
       - name: Upload artifact
