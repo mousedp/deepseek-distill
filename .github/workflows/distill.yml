@@ -1,0 +1,39 @@
+name: Knowledge Distillation
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  distill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Assemble & Distill
+        run: node distiller.js
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: distilled-output
+          path: distilled.md
+          retention-days: 30
+
+      - name: Commit result
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add distilled.md
+          git diff --staged --quiet || git commit -m "Update distilled.md [skip ci]"
+          git push
